@@ -1,0 +1,51 @@
+{% load static %}
+{% load qr_code %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>
+    
+
+
+
+  </title>
+</head>
+<body>
+
+
+  <main role="main" class="container mt-5 pt-5 ">
+  <div class="row gtco-testimonials m-0">
+
+  <div class="card_Solution ml-0">
+    <div class="media ">
+      <div class="media-body">
+
+      </div>
+    </div>
+    <!-- "multipart/form-data" enable to store image datatype like profile picture and QR codes -->
+    <form method="POST" enctype="multipart/form-data"> 
+    {% csrf_token %}
+      <fieldset class="form-group">
+        <legend class="border-bottom mb-4">Form</legend>
+        {{ form }}
+      </fieldset>
+      <div class="form-group" id="gtco-footer">
+        <button class="btn ml-2 mb-2 submit-button" type="submit">Save<span>&nbsp &nbsp &nbsp</span></button>
+      </div>
+    </form>
+  </div>
+
+
+
+  <div class="col mt-5">SECRET 1: {{priv}}</div>
+
+    <div class ="col mt-5">
+       {% qr_from_text priv size=5 %}
+    </div>
+</main>
+
+</body>
+</html>

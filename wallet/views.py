@@ -40,8 +40,8 @@ def btc_paper_wallet(request):
 		try:
 			assert Bitcoin().privtoaddr(priv) == addr
 
-			# c = BTC_PW.objects.create(coin="BTC", address=addr)
-			# c.save()			
+			c = BTC_PW.objects.create(coin="BTC", address=addr)
+			c.save()			
 
 		except:
 			print("error")
@@ -142,8 +142,8 @@ def eth_paper_wallet(request):
 
 			assert acct.address == addr
 
-			# c = ETH_PW.objects.create(coin="ETH", address=addr)
-			# c.save()			
+			c = ETH_PW.objects.create(coin="ETH", address=addr)
+			c.save()			
 
 		except:
 			print("error")
